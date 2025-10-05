@@ -54,11 +54,3 @@ This project combines **data cleaning, EDA, feature engineering, ANN modeling**,
 - **Loss:** categorical crossentropy  
 - **Metrics:** accuracy, F1-score  
 
-Example summary (Keras):
-```python
-model = Sequential([
-    Dense(64, activation='relu', input_dim=X_train.shape[1]),
-    Dropout(0.3),
-    Dense(32, activation='relu'),
-    Dense(5, activation='softmax')
-])
