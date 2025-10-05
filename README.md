@@ -1,56 +1,82 @@
-# 📱 Mobile Device Usage & User Behavior — Deep Learning Analysis
-
-A data science project exploring user behavior patterns from mobile usage data using **Artificial Neural Networks (ANN)**.  
-This project combines **data cleaning, EDA, feature engineering, ANN modeling**, and **business-driven insights visualization** in one repository.
-
+# 📱 Mobile Device Usage & User Behavior — ANN Deep Learning Project
 ---
 
 ## 🔍 Dataset Overview
-**Source:** [Kaggle - Mobile Device Usage & User Behavior Dataset](#)
+**Source:** [Kaggle - Mobile Device Usage & User Behavior Dataset](https://www.kaggle.com/code/momenayman9/mobile-device-usage-and-user-behavio/input)
 
 | Variable | Description |
-|-----------|--------------|
+|----------|-------------|
 | User ID | Unique identifier for each user |
 | Device Model | Smartphone model used |
-| Operating System | iOS or Android |
-| App Usage Time (min/day) | Daily app usage time |
-| Screen On Time (hours/day) | Average screen active time |
+| Operating System | Device OS (iOS or Android) |
+| App Usage Time (min/day) | Average daily app usage in minutes |
+| Screen On Time (hours/day) | Average daily screen-on duration |
 | Battery Drain (mAh/day) | Daily battery consumption |
-| Number of Apps Installed | Total apps per user |
-| Data Usage (MB/day) | Daily mobile data usage |
-| Age | User’s age |
+| Number of Apps Installed | Total installed apps |
+| Data Usage (MB/day) | Daily data usage in MB |
+| Age | User age |
 | Gender | Male / Female |
-| User Behavior Class | 1–5, from light to extreme usage |
+| User Behavior Class | Behavior classification (1–5, light to extreme) |
 
 ---
 
-## 🎯 Project Objectives
-1. Clean and preprocess the dataset for modeling.  
-2. Understand patterns and correlations in mobile usage.  
-3. Build and train a **Deep Learning model (ANN)** to classify `User Behavior Class`.  
-4. Evaluate model performance and interpret patterns.  
-5. Visualize findings through an **infographic** for non-technical audiences.
+## 🔁 Project Workflow
+
+### 1. Data Ingestion & Initial Check
+- Load dataset and inspect schema.
+- Check for missing values and inconsistent types.
+- No missing values found → ready for preprocessing.
+
+### 2. Exploratory Data Analysis (EDA)
+- Analyze distributions of User Behavior Class, Age, Gender, OS.
+- Visualize correlations between App Usage Time, Screen On Time, Battery Drain, Data Usage.
+- Insights: heavy usage correlates with high battery consumption; Class 2 dominates.
+
+### 3. Data Cleaning & Preprocessing
+- Encode categorical variables.
+- Standardize numeric variables for ANN modeling.
+- Dataset split into 80% training / 20% testing.
+
+### 4. Feature Engineering
+- Create derived metrics (e.g., usage per app, battery per hour).
+- Correlation analysis to select features for ANN.
+
+### 5. ANN Model Training
+- Train ANN with training set, validation split 0.33, 100 epochs.
+- Monitor accuracy and loss to ensure proper convergence.
+
+### 6. Model Evaluation
+- Evaluate test accuracy and analyze confusion matrix.
+- Class 1 shows highest correct-classification rate (73.8%).
+
+### 7. Predictions
+- Generate predicted classes for test set.
+- Evaluate probability distributions across classes.
+
+### 8. Model Visualization
+- Infographic charts for training accuracy, loss, and confusion matrix.
+- Heatmaps and scatterplots for feature correlations.
+
+### 9. Reporting & Business Insights
+- Infographic + one-page summary for stakeholders.
+- Provides actionable insights for app retention, device optimization, and personalization strategies.
 
 ---
 
-## 🧠 Methodology
-| Step | Description |
-|------|--------------|
-| **1. Data Cleaning & Filtering** | Handling missing values, type correction, and outlier removal. |
-| **2. Exploratory Data Analysis (EDA)** | Understanding variable distribution, correlations, and relationships. |
-| **3. Feature Engineering** | Creating new metrics such as `usage_per_app` and `battery_per_hour`. |
-| **4. Deep Learning (ANN)** | Building and training a multi-layer perceptron (MLP) for classification. |
-| **5. Evaluation & Visualization** | Comparing accuracy, loss trends, and generating visual reports. |
-| **6. Business Insight Interpretation** | Translating technical findings into actionable takeaways. |
+## 💡 Conclusions
+
+- Device usage intensity directly impacts battery consumption and app interaction.  
+- Behavior Class 2 dominates the population, while Class 1 is least represented.  
+- ANN achieved **76.62% accuracy**, showing good predictive performance.  
+- Confusion matrix shows Class 1 was most accurately predicted (73.8%).  
+- Misclassifications mainly occur between adjacent classes (2 and 3), suggesting overlapping behavioral traits.  
+- ANN effectively models nonlinear relationships, supporting segmentation and targeted interventions for different user behavior classes.  
 
 ---
 
-## 🧩 Model Architecture (ANN)
-- **Input Layer:** normalized numeric features  
-- **Hidden Layers:** 2–3 Dense layers (ReLU activation)  
-- **Dropout:** to prevent overfitting  
-- **Output Layer:** softmax activation (5 classes)  
-- **Optimizer:** Adam  
-- **Loss:** categorical crossentropy  
-- **Metrics:** accuracy, F1-score  
+## 🖼️ Infographic Notes (`User Behavior.png`)
+![User Behavior](User%20Behavior.png)  
+- Designed for stakeholders to quickly grasp key insights.
+- Clean layout, 2–3 corporate colors, clear metrics.
+- Panels include: class distribution, usage vs battery, device/OS insights, ANN accuracy, confusion matrix, business recommendations.  
 
