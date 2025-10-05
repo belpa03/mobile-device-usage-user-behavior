@@ -75,7 +75,7 @@
 ---
 
 ## 🖼️ Infographic Notes (`User Behavior.png`)
-![User Behavior](User%20Behavior.png)  
+![User Behavior](User%20Behavior.jpeg)  
 - Designed for stakeholders to quickly grasp key insights.
 - Clean layout, 2–3 corporate colors, clear metrics.
 - Panels include: class distribution, usage vs battery, device/OS insights, ANN accuracy, confusion matrix, business recommendations.  
